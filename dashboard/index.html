@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Token Launch Radar — pre-token protocols ranked by implied value</title>
+<link rel="stylesheet" href="app.css">
+</head>
+<body>
+<header class="top">
+  <div class="brand"><span class="dot"></span> TOKEN LAUNCH RADAR</div>
+  <div class="sub" id="subline">Loading the board…</div>
+</header>
+<section class="stats" id="stats"></section>
+<section class="model-note" id="model-note"></section>
+<section class="controls">
+  <input id="q" type="search" placeholder="Search name or slug…">
+  <select id="f-cat"><option value="">All categories</option></select>
+  <select id="f-chain"><option value="">All chains</option></select>
+  <label class="chk"><input id="f-watch" type="checkbox"> Watchlist only</label>
+  <span class="count" id="count"></span>
+</section>
+<main>
+  <table id="board">
+    <thead><tr>
+      <th data-k="rank">#</th><th data-k="name">Protocol</th><th data-k="category">Category</th>
+      <th data-k="tvl_usd" class="num">TVL</th><th data-k="change_7d" class="num">7d %</th>
+      <th data-k="age_days" class="num">Age (d)</th><th data-k="implied_value_usd" class="num">Implied value</th>
+      <th>Signal</th>
+    </tr></thead>
+    <tbody id="rows"></tbody>
+  </table>
+  <p class="foot">Implied value is this radar's own model claim, not a prediction that a token will launch. Protocols whose token already trades are set aside and never ranked.</p>
+</main>
+<div id="scrim" class="scrim hidden"></div>
+<aside id="detail" class="detail hidden" aria-label="Protocol detail"></aside>
+<script src="../data.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
